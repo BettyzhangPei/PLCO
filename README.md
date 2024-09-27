@@ -73,7 +73,7 @@ where
 
 # Usage Notes
 1. We recommend transforming response (e.g., using a log transformation) to approximate a normal distribution before applying our functions.
-2. We recommend transforming time variable (e.g., using estimated age -55 for PLCO prostate cancer dataset) to control the scale of time variable. 
+2. We recommend transforming time variable (e.g., using estimated age -55 for PLCO prostate cancer dataset) to control the scale of time variable before applying our functions. 
 3. Our calculations assume there is unbalanced longitudinal data structure. 
    
 # References
