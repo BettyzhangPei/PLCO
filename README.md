@@ -46,7 +46,7 @@ data0 <- generate_data(P = P, N = N, J = J, theta, xi)
 # call function to obtain information n,Z,t,y, and matrices A, S, G, W,H based on known n,Z,t,y 
 data = generate_information(n= data0$n, Z= data0$Z, t= data0$t, y=data0$y)
 # Perform AI-ReML algorithm for estimation of unknown variance parameters
-# For instance, we choose an arbitrary input for AI-ReML algorithm
+# For instance, we choose an arbitrary input for unknown variance components for AI-ReML algorithm
 initial.par = theta
 result <- AI_ReML(par = initial.par, l_ReML,  maxit = 1000, maxtol = 1e-4, data = data, f_V, AI_DL, woodbury_inverse_V)
 # print results from AI-ReML algorithm
