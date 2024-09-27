@@ -56,21 +56,21 @@ est_fixed_effects(est.par, data, f_V, woodbury_inverse_V)
 est_genetic_effects(est.par, data)
 ```
 where 
-- data0 has to be structured as a list of vectors:
-- - n : A N x 1 column vector represents total number of measurements for each subject. 
-- - Z: A N x P matrix with standardized genotypic values. 
-- - t: A sum(n) x 1 column vector of the time variable.
-- - y: A sum(n) x 1 column vector of the longitudinal response. 
-- data has to be structured as a list of vectors and matrices:
-- - n: A N x 1 column vector represents total number of measurements for each subject. 
-- - Z: A N x P matrix with standardized genotypic values. 
-- - t: A sum(n) x 1 column vector of the time variable.
-- - y: A sum(n) x 1 column vector of the longitudinal response.
-- - A: A sum(n) x 2 covariate matrix of fixed effects beta_0 and beta_1.
-- - S: A sum(n) x 4 covariate matrix of fixed effects xi = (beta_0, beta1, mu_alpha, mu_eta).
-- - G: A N x N matrix as P times genetic relationship matrix.
-- - W: A sum(n) x (2P+2N) covariate matrix of random effects.
-- - H: composite matrix for AI matrix and DL matrix.
+data0 has to be structured as a list of vectors:
+- n : A N x 1 column vector represents total number of measurements for each subject. 
+- Z: A N x P matrix with standardized genotypic values. 
+- t: A sum(n) x 1 column vector of the time variable.
+- y: A sum(n) x 1 column vector of the longitudinal response. 
+data has to be structured as a list of vectors and matrices:
+- n: A N x 1 column vector represents total number of measurements for each subject. 
+- Z: A N x P matrix with standardized genotypic values.
+- t: A sum(n) x 1 column vector of the time variable.
+- y: A sum(n) x 1 column vector of the longitudinal response.
+- A: A sum(n) x 2 covariate matrix of fixed effects beta_0 and beta_1.
+- S: A sum(n) x 4 covariate matrix of fixed effects xi = (beta_0, beta1, mu_alpha, mu_eta).
+- G: A N x N matrix as P times genetic relationship matrix.
+- W: A sum(n) x (2P+2N) covariate matrix of random effects.
+- H: composite matrix for AI matrix and DL matrix.
 
 # Usage Notes
 1. We recommend transforming response (e.g., using a log transformation) to approximate a normal distribution before applying our functions.
