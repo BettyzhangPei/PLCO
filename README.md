@@ -74,7 +74,7 @@ where data0 has to be structured as a list of vectors n, Z, t, y. data has to be
 1. We recommend transforming response (e.g., using a log transformation) to approximate a normal distribution before applying our functions.
 2. We recommend transforming time variable (e.g., using estimated age -55 for PLCO prostate cancer dataset) to control the scale of time variable before applying our functions. 
 3. Our calculations assume there is unbalanced longitudinal data structure.
-4. For sim_II.R and sim_II_genetic_effects.R, both of them are for simulation studies for a specific scenario with 1000 repetitions, we conducted them on Biowulf by setting value of a from 1 to 1000.  
+4. For `sim_II.R` and `sim_II_genetic_effects.R`, both of them are for simulation studies for a specific scenario with 1000 repetitions, we conducted them on Biowulf by setting value of a from 1 to 1000.  
    
 # References
 Johnson, DL and Thompson, Robin (1995) Restricted maximum likelihood estimation of variance components for univariate animal models using sparse matrix techniques and average information.  Journal of dairy science, 78(2): 449-456. 
