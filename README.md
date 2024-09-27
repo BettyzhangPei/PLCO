@@ -55,12 +55,12 @@ est_fixed_effects(est.par, data, f_V, woodbury_inverse_V)
 est_genetic_effects(est.par, data)
 ```
 where 
-- data0 has to be structured as a list of vectors 
+- data0 has to be structured as a list of vectors:
 - n : A N x 1 column vector represents total number of measurements for each subject. 
 - Z: A N x P matrix with standardized genotypic values. 
 - t: A sum(n) x 1 column vector of the time variable.
 - y: A sum(n) x 1 column vector of the longitudinal response. 
-- data has to be structured as a list of vectors and matrices.
+- data has to be structured as a list of vectors and matrices:
 - n: A N x 1 column vector represents total number of measurements for each subject. 
 - Z: A N x P matrix with standardized genotypic values. 
 - t: A sum(n) x 1 column vector of the time variable.
