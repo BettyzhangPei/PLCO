@@ -48,7 +48,7 @@ data = generate_information(n= data0$n, Z= data0$Z, t= data0$t, y=data0$y)
 # Perform AI-ReML algorithm for estimation of unknown variance parameters
 # For instance, we choose an arbitrary input for AI-ReML algorithm
 initial.par = theta
-result <- AI_ReML(par = initial.par, l_ReML,  maxit = 1, maxtol = 1e-4, data = data, f_V, AI_DL, woodbury_inverse_V)
+result <- AI_ReML(par = initial.par, l_ReML,  maxit = 1000, maxtol = 1e-4, data = data, f_V, AI_DL, woodbury_inverse_V)
 # print results from AI-ReML algorithm
 print(result)
 # Estimated variance components = (sigma^2_alpha, sigma^2_eta, sigma^2_b0, sigma^2_b1, sigma^2_e)
