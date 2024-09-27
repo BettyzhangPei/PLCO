@@ -204,9 +204,13 @@ l_ReML<-function(par, data, f_V, woodbury_inverse_V)
   a1<- determinant(V, logarithm =TRUE)$modulus[1]
   
   
-  R1<- V1 - V1%*%S%*% solve(t(S)%*%V1%*%S)%*%t(S)%*%V1 
-  
-  a2<- determinant(t(S)%*% V1 %*%S, logarithm =TRUE)$modulus[1]
+  V2 = t(S)%*%V1%*%S
+    
+  V3 = V1%*%S
+    
+  R1<- V1 - V3%*% solve(V2)%*%t(V3) 
+    
+  a2<- determinant(V2, logarithm =TRUE)$modulus[1]
   
   # The Restricted log likelihood function: 
   l<- - (0.5)*( t(y) %*% R1 %*% y + a1 + a2) 
@@ -363,9 +367,10 @@ AI_DL<- function(par, data, f_V,  woodbury_inverse_V)
   ## Case1: When P is not very large, the inverse of covariance matrix V with the Woodbury Matrix Identity Formula:
   # Since P (= 253 or 200 or 100 ) not very large, then here we will apply the woodbury matrix identity formula as below.
   V1<- woodbury_inverse_V(par, data)
+
+  V2 = V1%*%S
   
-  
-  R1<- V1 - V1%*%S%*% solve(t(S)%*%V1%*%S)%*%t(S)%*%V1 
+  R1<- V1 - V2%*% solve(t(S)%*%V2)%*%t(V2) 
   
   n0= length(par)
   
