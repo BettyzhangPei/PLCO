@@ -17,14 +17,14 @@ For real data analysis, we use PLCO.R. Among PLCO.R:
 - `AI-ReML` function
 - `est_fixed_effects` function
 - `est_genetic_effects` function
-where
-- The `generate_data` function mimic the PLCO datasets to provide a list of observed data: n, Z, t and y. 
-- The `generate_information` function provides a list of obaserved data and required matrices: n, Z, t, y, A, S, G, W, and H.
-- The `AI-ReML` function provides estimates for variance components in a linear mixed model by integrating genetic effects in a longitudinal phenotype via AI-ReML algorithm based on inputed dataset. 
-- The `est_fixed_effects` function generates estimated coefficients of fixed effects and related estimated variance-covariance matric of them. 
-- The `est_genetic_effects` function provides estimated effect sizes and genetic effects on both baseline and slope in the longitudinal phenotype. 
+The `generate_data` function mimic the PLCO datasets to provide a list of observed data: n, Z, t and y. 
+The `generate_information` function provides a list of obaserved data and required matrices: n, Z, t, y, A, S, G, W, and H.
+The `AI-ReML` function provides estimates for variance components in a linear mixed model by integrating genetic effects in a longitudinal phenotype via AI-ReML algorithm based on inputed dataset. 
+The `est_fixed_effects` function generates estimated coefficients of fixed effects and related estimated variance-covariance matric of them. 
+The `est_genetic_effects` function provides estimated effect sizes and genetic effects on both baseline and slope in the longitudinal phenotype. 
 For instance: 
 ```r
+###################################################################################################################
 # Set a specific seed for reproducibility
 set.seed(1)
 # Define number of SNPs, sample size, etc.
@@ -38,8 +38,11 @@ J <- 6
 theta = c(0.005, 0.002, 0.5, 0.2, 0.2)
 # xi: coefficients of fixed effects beta_0, beta_1, mu_alpha, mu_eta
 xi = c(0.5, 0.05, 0, 0)
-# Call function to generate data: n,Z,t,y
+# Call function to generate data0 with a list of vectors: n,Z,t,y
 data0 <- generate_data(P = P, N = N, J = J, theta, xi)
+####################################################################################################################
+
+################### For real data analysis with known data0 as a list of column vectors n, Z, t,y ##################
 # call function to obtain information n,Z,t,y, and matrices A, S, G, W,H based on known n,Z,t,y 
 data = generate_information(n= data0$n, Z= data0$Z, t= data0$t, y=data0$y)
 # Perform AI-ReML algorithm for estimation of unknown variance parameters
@@ -54,6 +57,7 @@ est.par= as.matrix(result$par, ncol=1)
 est_fixed_effects(est.par, data, f_V, woodbury_inverse_V)
 # Prediction of effect sizes (alpha_p and eta_p) and genetic effects (g_i and g_i^*)
 est_genetic_effects(est.par, data)
+####################################################################################################################
 ```
 where data0 has to be structured as a list of vectors n, Z, t, y. data has to be structured as a list of vectors and matrices n, Z, t, y, A, S, G, W and H. 
 - n: A N x 1 column vector represents total number of measurements for each subject. 
