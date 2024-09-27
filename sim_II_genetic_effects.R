@@ -529,9 +529,10 @@ f<- function(a)
     # Method2: Apply decomposition for the inverse of V: 
     #V1<- chol2inv(chol(V))
     
-    # a1<-log(det(V))
-    #a1<- determinant(V, logarithm =TRUE)$modulus[1]
-    R1<- V1 - V1%*%S%*% solve(t(S)%*%V1%*%S)%*%t(S)%*%V1 
+    V2= V1%*%S
+    
+    R1<- V1 - V2%*% solve(t(S)%*%V2)%*%t(V2)
+    
     
     
     AI_matrix<- matrix(0, n0, n0)
