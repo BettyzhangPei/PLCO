@@ -17,12 +17,12 @@ For real data analysis, we use PLCO.R, Among PLCO.R:
 - `AI-ReML` function
 - `est_fixed_effects` function
 - `est_genetic_effects` function
-
-The `generate_data` function mimic the PLCO datasets to provide a list of observed data: n, Z, t and y. 
-The `generate_information` function provides a list of obaserved data and required matrices: n, Z, t, y, A, S, G, W, and H.
-The `AI-ReML` function provides estimates for variance components in a linear mixed model by integrating genetic effects in a longitudinal phenotype via AI-ReML algorithm based on inputed dataset. 
-The `est_fixed_effects` function generates estimated coefficients of fixed effects and related estimated variance-covariance matric of them. 
-The `est_genetic_effects` function provides estimated effect sizes and genetic effects on both baseline and slope in the longitudinal phenotype. 
+where
+- The `generate_data` function mimic the PLCO datasets to provide a list of observed data: n, Z, t and y. 
+- The `generate_information` function provides a list of obaserved data and required matrices: n, Z, t, y, A, S, G, W, and H.
+- The `AI-ReML` function provides estimates for variance components in a linear mixed model by integrating genetic effects in a longitudinal phenotype via AI-ReML algorithm based on inputed dataset. 
+- The `est_fixed_effects` function generates estimated coefficients of fixed effects and related estimated variance-covariance matric of them. 
+- The `est_genetic_effects` function provides estimated effect sizes and genetic effects on both baseline and slope in the longitudinal phenotype. 
 For instance: 
 ```r
 # Set a specific seed for reproducibility
