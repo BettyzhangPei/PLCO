@@ -11,6 +11,7 @@ Building on the measurement error model by Thompson et al. (2008), our R code em
 
 
 # Usage Examples
+In PLCO.R: 
 - `generate_data` function
 - `generate_information` function
 - `AI-ReML` function
@@ -22,7 +23,7 @@ The `generate_information` function provides a list of obaserved data and requir
 The `AI-ReML` function provides estimates for variance components in a linear mixed model by integrating genetic effects in a longitudinal phenotype via AI-ReML algorithm based on inputed dataset. 
 The `est_fixed_effects` function generates estimated coefficients of fixed effects and related estimated variance-covariance matric of them. 
 The `est_genetic_effects` function provides estimated effect sizes and genetic effects on both baseline and slope in the longitudinal phenotype. 
-For instance:
+For instance: 
 ```r
 # Set a specific seed for reproducibility
 set.seed(1)
