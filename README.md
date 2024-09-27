@@ -3,7 +3,7 @@ Approaches for estimating genetic effects at the individual level often focus on
  
 Utilizing the Average Information Restricted Maximum Likelihood (AI-ReML) algorithm within a crossed mixed model framework for the estimation of variance components, this code provides an example to explore differential genetic effects on baseline levels and rates of change in a longitudinal phenotype by mimicing prostate-specific antigen (PSA) trajectories among participants from prostate cancer-free in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial. 
 
-Building on the measurement error model by Thompson et al. (2008), our R code employs the AI-ReML algorithm and procedure of best linear unbiased predictors for random effects. This R code estimates:
+Building on the proposed mixed model with genetic effects on both baseline and slope of a longitudinal phenotype , our R code employs the AI-ReML algorithm and procedure of best linear unbiased predictors for random effects. This R code estimates:
 - All variance components for genetic- and subject- specific random effects and residual error term.
 - The coefficients of fixed effects.   
 - The two types of effect sizes of genetic effects on baseline and slope, respectively.
