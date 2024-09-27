@@ -519,7 +519,7 @@ f<- function(a)
     
     ## Case1: When P is not very large, the inverse of covariance matrix V with the Woodbury Matrix Identity Formula:
     # Since P = 253 not very large, then here we will apply the woodbury matrix identity formula as below.
-    #V1<- woodbury_inverse(par=par, W=W)
+     # V1<- woodbury_inverse(par=par, W=W)
     
     ##Case2: When P is very large like 7 million, we will directly apply the below methods to compute
     # Due to the dimension of V independent with P
@@ -529,9 +529,10 @@ f<- function(a)
     # Method2: Apply decomposition for the inverse of V: 
     #V1<- chol2inv(chol(V))
     
-    # a1<-log(det(V))
-    #a1<- determinant(V, logarithm =TRUE)$modulus[1]
-    R1<- V1 - V1%*%S%*% solve(t(S)%*%V1%*%S)%*%t(S)%*%V1 
+    V2= V1%*%S
+
+    
+    R1<- V1 - V2%*% solve(t(S)%*%V2)%*%t(V2)
     
     
     AI_matrix<- matrix(0, n0, n0)
