@@ -11,7 +11,7 @@ Building on the measurement error model by Thompson et al. (2008), our R code em
 
 
 # Usage Examples
-For real data analysis, we use PLCO.R. Among PLCO.R: 
+For real data analysis, we use `PLCO.R`. Among `PLCO.R`: 
 - `generate_data` function
 - `generate_information` function
 - `AI-ReML` function
