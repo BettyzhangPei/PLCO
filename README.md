@@ -78,5 +78,5 @@ where
    
 # References
 Johnson, DL and Thompson, Robin (1995) Restricted maximum likelihood estimation of variance components for univariate animal models using sparse matrix techniques and average information.  Journal of dairy science, 78(2): 449-456. 
-Yang, Jian and Lee, S Hong and Goddard, Michael E and Visscher, Peter M (2011) {GCTA}: a tool for genome-wide complex trait analysis. The American Journal of Human Genetics, 88(1): 76-82.
+Yang, Jian and Lee, S Hong and Goddard, Michael E and Visscher, Peter M (2011) GCTA: a tool for genome-wide complex trait analysis. The American Journal of Human Genetics, 88(1): 76-82.
    
