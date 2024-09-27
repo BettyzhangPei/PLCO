@@ -491,9 +491,13 @@ f<- function(a)
     a1<- determinant(V, logarithm =TRUE)$modulus[1]
     
     
-    R1<- V1 - V1%*%S%*% solve(t(S)%*%V1%*%S)%*%t(S)%*%V1 
+    V2 = t(S)%*%V1%*%S
     
-    a2<- determinant(t(S)%*% V1 %*%S, logarithm =TRUE)$modulus[1]
+    V3 = V1%*%S
+    
+    R1<- V1 - V3%*% solve(V2)%*%t(V3) 
+    
+    a2<- determinant(V2, logarithm =TRUE)$modulus[1]
     
     # The Reml function: 
     l<- - (0.5)*( t(y) %*% R1 %*% y + a1 + a2) 
