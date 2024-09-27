@@ -55,13 +55,7 @@ est_fixed_effects(est.par, data, f_V, woodbury_inverse_V)
 # Prediction of effect sizes (alpha_p and eta_p) and genetic effects (g_i and g_i^*)
 est_genetic_effects(est.par, data)
 ```
-where 
-data0 has to be structured as a list of vectors:
-- n : A N x 1 column vector represents total number of measurements for each subject. 
-- Z: A N x P matrix with standardized genotypic values. 
-- t: A sum(n) x 1 column vector of the time variable.
-- y: A sum(n) x 1 column vector of the longitudinal response. 
-data has to be structured as a list of vectors and matrices:
+where data0 has to be structured as a list of vectors n, Z, t, y. data has to be structured as a list of vectors and matrices n, Z, t, y, A, S, G, W and H. 
 - n: A N x 1 column vector represents total number of measurements for each subject. 
 - Z: A N x P matrix with standardized genotypic values.
 - t: A sum(n) x 1 column vector of the time variable.
