@@ -202,9 +202,10 @@ l_ReML<-function(par, data, f_V, woodbury_inverse_V)
   
   # a1 = log(det(V))
   # a1 <- determinant(V, logarithm =TRUE)$modulus[1]
-    a1 = 2*sum(log(diag(chol(V))))
+  a1 = 2*sum(log(diag(chol(V))))
   
   V2 = t(S)%*%V1%*%S
+  
   # cheolsky decomosition for V2
   L <- chol(V2)
   
