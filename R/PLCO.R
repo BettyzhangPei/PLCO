@@ -201,16 +201,24 @@ l_ReML<-function(par, data, f_V, woodbury_inverse_V)
   V1<- woodbury_inverse_V(par=par, data)
   
   # a1 = log(det(V))
-  a1<- determinant(V, logarithm =TRUE)$modulus[1]
-  
+  # a1 <- determinant(V, logarithm =TRUE)$modulus[1]
+    a1 = 2*sum(log(diag(chol(V))))
   
   V2 = t(S)%*%V1%*%S
-    
+  # cheolsky decomosition for V2
+  L <- chol(V2)
+  
+  # Log determinant of V2
+  # a2<- determinant(V2, logarithm =TRUE)$modulus[1]
+  a2 <- 2 * sum(log(diag(L)))
+
+  # inverse of V2: 
+  inverse_V2 = chol2inv(L)
+  
   V3 = V1%*%S
     
-  R1<- V1 - V3%*% solve(V2)%*%t(V3) 
-    
-  a2<- determinant(V2, logarithm =TRUE)$modulus[1]
+  # R1<- V1 - V3%*% solve(V2)%*%t(V3) 
+  R1 = V1 - V3 %*%  inverse_V2 %*% t(V3)
   
   # The Restricted log likelihood function: 
   l<- - (0.5)*( t(y) %*% R1 %*% y + a1 + a2) 
