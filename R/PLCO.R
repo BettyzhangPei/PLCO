@@ -698,7 +698,7 @@ generate_information <- function(n, Z, t, y)
   {
     
     # the number of unknown variance parameters 
-    n0 <- length(theta)
+    n0 <- 5
     
     #########################################
     H<- matrix(0,nrow=n0*sum(n), ncol=sum(n))
